@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-                            
+class NavigationViewController: UINavigationController {
+    var model: Model!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        model = Model()
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,10 @@
 
 import UIKit
 
+let CellIdentifier: String = "CellIdentifier"
+
 class CoursesCollectionViewController: UICollectionViewController, UICollectionViewDelegate {
+    var model: Model!
     
     override func loadView() {
         super.loadView()
@@ -21,9 +24,30 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
         
         let collectionViewRect: CGRect = UIScreen().bounds
         let collectionView = UICollectionView(frame: collectionViewRect, collectionViewLayout: flowLayout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.registerClass(CoursesCollectionViewCell.self, forCellWithReuseIdentifier: CellIdentifier)
         
         self.collectionView = collectionView
         
+        
+        
+    }
+    
+    override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
+        
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellIdentifier, forIndexPath: indexPath) as CoursesCollectionViewCell
+        cell.bounds = CGRectMake(0, 0, 100, 100)
+        cell.backgroundColor = UIColor.whiteColor()
+        
+        
+        return cell as UICollectionViewCell
+        
+    }
+    
+    override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+        return self.model.courses.count
     }
     
 }
