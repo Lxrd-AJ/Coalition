@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2D819AF9462001D3C46 /* VideoViewController.m */; };
 		BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */; };
 		BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15F19AF8E9000831ACC /* ViewController.swift */; };
 		BE6FF16319AF8E9000831ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6FF16119AF8E9000831ACC /* Main.storyboard */; };
@@ -25,6 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		218CE2D619AF9461001D3C46 /* Coalition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coalition-Bridging-Header.h"; sourceTree = "<group>"; };
+		218CE2D719AF9462001D3C46 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		218CE2D819AF9462001D3C46 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		BE6FF15819AF8E8F00831ACC /* Coalition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coalition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6FF15C19AF8E9000831ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		218CE2DA19AF99E0001D3C46 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		218CE2DB19AF99E6001D3C46 /* Course Detail */ = {
+			isa = PBXGroup;
+			children = (
+				218CE2DD19AF9B61001D3C46 /* Challenges */,
+				218CE2DC19AF9B55001D3C46 /* Video */,
+			);
+			name = "Course Detail";
+			sourceTree = "<group>";
+		};
+		218CE2DC19AF9B55001D3C46 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
+		218CE2DD19AF9B61001D3C46 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Challenges;
+			sourceTree = "<group>";
+		};
 		BE6FF14F19AF8E8F00831ACC = {
 			isa = PBXGroup;
 			children = (
@@ -75,11 +109,15 @@
 		BE6FF15A19AF8E8F00831ACC /* Coalition */ = {
 			isa = PBXGroup;
 			children = (
+				218CE2DA19AF99E0001D3C46 /* Courses */,
+				218CE2DB19AF99E6001D3C46 /* Course Detail */,
 				BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */,
 				BE6FF15F19AF8E9000831ACC /* ViewController.swift */,
 				BE6FF16119AF8E9000831ACC /* Main.storyboard */,
 				BE6FF16419AF8E9000831ACC /* Images.xcassets */,
 				BE6FF15B19AF8E9000831ACC /* Supporting Files */,
+				218CE2D719AF9462001D3C46 /* VideoViewController.h */,
+				218CE2D819AF9462001D3C46 /* VideoViewController.m */,
 			);
 			path = Coalition;
 			sourceTree = "<group>";
@@ -87,6 +125,7 @@
 		BE6FF15B19AF8E9000831ACC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				218CE2D619AF9461001D3C46 /* Coalition-Bridging-Header.h */,
 				BE6FF15C19AF8E9000831ACC /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -210,6 +249,7 @@
 			files = (
 				BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */,
 				BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */,
+				218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,9 +365,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coalition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coalition/Coalition-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -336,9 +380,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coalition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coalition/Coalition-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -395,6 +442,7 @@
 				BE6FF17619AF8E9000831ACC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE6FF17719AF8E9000831ACC /* Build configuration list for PBXNativeTarget "CoalitionTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +451,7 @@
 				BE6FF17919AF8E9000831ACC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
