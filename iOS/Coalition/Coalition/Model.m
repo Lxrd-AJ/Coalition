@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 James Nocentini. All rights reserved.
 //
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 #import "Model.h"
 #import "Chapter.h"
@@ -52,7 +53,7 @@
                 //Build up the URL String
                 NSString *urlString = [chapterPath stringByAppendingString:content];
                 aContent.url = [NSURL URLWithString:urlString];
-                
+                [Model generateImagefrom:aContent.url onObject:aContent];
                 //add the content to the chapter
                 [aChapter.contents addObject:aContent];
             }
@@ -64,6 +65,27 @@
         [self.courses addObject:aCourse];
     }
     
+}
+
++(void)generateImagefrom:(NSURL *)url onObject:(NSObject *)object
+{
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:url options:nil];
+    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    generator.appliesPreferredTrackTransform = TRUE;
+    CMTime thumbTime = CMTimeMakeWithSeconds(0, 34 );
+    __block Content *content = (Content*)object;
+    
+    AVAssetImageGeneratorCompletionHandler handler = ^(CMTime requestedTime, CGImageRef image , CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error )
+    {
+        if ( result != AVAssetImageGeneratorSucceeded ) {
+            NSLog(@"Thumbnail generation failed, error:%@", error );
+        }
+        content.thumbnail = [[UIImage alloc] initWithCGImage:image];
+    };
+    
+    CGSize maxSize = CGSizeMake(320, 180);
+    generator.maximumSize = maxSize;
+    [generator generateCGImagesAsynchronouslyForTimes:[NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
 }
 
 
