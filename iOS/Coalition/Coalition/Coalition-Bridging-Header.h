@@ -4,3 +4,7 @@
 #import "VideoViewController.h"
 #import "ChallengesViewController.h"
 #import "Model.h"
+#import "Content.h"
+#import "Course.h"
+#import "Chapter.h"
+#import "Challenge.h"
