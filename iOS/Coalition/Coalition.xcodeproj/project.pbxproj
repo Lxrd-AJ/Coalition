@@ -20,7 +20,7 @@
 		BE80EE4519AFA69000B8639E /* CoursesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4419AFA69000B8639E /* CoursesCVC.swift */; };
 		BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4619AFA71800B8639E /* CoursesCVCell.swift */; };
 		BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4919AFB31A00B8639E /* Courses.swift */; };
-		BE80EE4D19AFB38D00B8639E /* coursera_videos in Resources */ = {isa = PBXBuildFile; fileRef = BE80EE4C19AFB38D00B8639E /* coursera_videos */; };
+		BE80EE5119AFBC9500B8639E /* coursera_videos in Resources */ = {isa = PBXBuildFile; fileRef = BE80EE5019AFBC9500B8639E /* coursera_videos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		BE80EE4419AFA69000B8639E /* CoursesCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesCVC.swift; sourceTree = "<group>"; };
 		BE80EE4619AFA71800B8639E /* CoursesCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesCVCell.swift; sourceTree = "<group>"; };
 		BE80EE4919AFB31A00B8639E /* Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
-		BE80EE4C19AFB38D00B8639E /* coursera_videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = coursera_videos; sourceTree = "<group>"; };
 		BE80EE4E19AFB3B500B8639E /* Courses.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Courses.playground; sourceTree = "<group>"; };
+		BE80EE5019AFBC9500B8639E /* coursera_videos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = coursera_videos; path = ../../../coursera_videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 				BE6FF16419AF8E9000831ACC /* Images.xcassets */,
 				BE6FF15B19AF8E9000831ACC /* Supporting Files */,
 				218CE2D719AF9462001D3C46 /* VideoViewController.h */,
-				BE80EE4C19AFB38D00B8639E /* coursera_videos */,
+				BE80EE5019AFBC9500B8639E /* coursera_videos */,
 				218CE2D819AF9462001D3C46 /* VideoViewController.m */,
 			);
 			path = Coalition;
@@ -268,9 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6FF16319AF8E9000831ACC /* Main.storyboard in Resources */,
+				BE80EE5119AFBC9500B8639E /* coursera_videos in Resources */,
 				218CE2E419AFA7FC001D3C46 /* ChallengesViewController.xib in Resources */,
-				BE80EE4D19AFB38D00B8639E /* coursera_videos in Resources */,
 				BE6FF16519AF8E9000831ACC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,12 +27,7 @@ let config = NSURLSessionConfiguration.defaultSessionConfiguration()
 
 class Booking {
     
-    init() {
-        config.HTTPAdditionalHeaders = [
-            "Authorization": "Token token=\"ruN4k19rMfTppcsxkk7y1sUuCWvodqmx86dke4mY\", client=\"xyxXFRyPusR4TP3XLieWbPhTUeE7etZDh9q3De-5\""
-        ]
-        session = NSURLSession(configuration: config)
-    }
+
     
     
     
