@@ -52,8 +52,9 @@
                 aContent.name = content;
                 //Build up the URL String
                 NSString *urlString = [chapterPath stringByAppendingString:content];
-                aContent.url = [NSURL URLWithString:urlString];
-                [Model generateImagefrom:aContent.url onObject:aContent];
+                aContent.url = [NSURL fileURLWithPath:urlString];
+                aContent.thumbnail = [self thumbnailFromVideoAtURL:aContent.url];
+                //NSLog( @"%@ is %@ at URL: %@", aContent.name, aContent.thumbnail, aContent.url );
                 //add the content to the chapter
                 [aChapter.contents addObject:aContent];
             }
@@ -67,25 +68,24 @@
     
 }
 
-+(void)generateImagefrom:(NSURL *)url onObject:(NSObject *)object
+
+-(UIImage *)thumbnailFromVideoAtURL:(NSURL *)url
 {
-    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:url options:nil];
-    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
-    generator.appliesPreferredTrackTransform = TRUE;
-    CMTime thumbTime = CMTimeMakeWithSeconds(0, 34 );
-    __block Content *content = (Content*)object;
+    AVAsset *asset = [AVAsset assetWithURL:url];
     
-    AVAssetImageGeneratorCompletionHandler handler = ^(CMTime requestedTime, CGImageRef image , CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error )
-    {
-        if ( result != AVAssetImageGeneratorSucceeded ) {
-            NSLog(@"Thumbnail generation failed, error:%@", error );
-        }
-        content.thumbnail = [[UIImage alloc] initWithCGImage:image];
-    };
+    //  Get thumbnail at the very start of the video
+    CMTime thumbnailTime = [asset duration];
+    thumbnailTime.value = 1;
     
-    CGSize maxSize = CGSizeMake(320, 180);
-    generator.maximumSize = maxSize;
-    [generator generateCGImagesAsynchronouslyForTimes:[NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
+    //  Get image from the video at the given time
+    AVAssetImageGenerator *imageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    
+    CGImageRef imageRef = [imageGenerator copyCGImageAtTime:thumbnailTime actualTime:NULL error:NULL];
+    UIImage *thumbnail = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    
+    return thumbnail;
+
 }
 
 
