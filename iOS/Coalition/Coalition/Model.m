@@ -64,8 +64,6 @@
         [self.courses addObject:aCourse];
     }
     
-    NSLog( @"%@", self.courses );
-    
 }
 
 
