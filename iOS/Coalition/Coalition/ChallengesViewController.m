@@ -11,7 +11,6 @@
 @interface ChallengesViewController ()
 
 @property(nonatomic,strong) MPMoviePlayerController *moviePlayer;
-@property(nonatomic,strong) NSURL *videoURL;
 
 @end
 
@@ -31,7 +30,7 @@
 
 -(void)startPlayingVideo:(id)sender{
     NSBundle *mainBundle = [NSBundle mainBundle];
-    
+
 }
 
 /*

@@ -13,6 +13,11 @@
 		218CE2E719AFA885001D3C46 /* ChallengesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E619AFA885001D3C46 /* ChallengesView.m */; };
 		218CE2E919AFAD4C001D3C46 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218CE2E819AFAD4C001D3C46 /* AVFoundation.framework */; };
 		218CE2EB19AFAD6E001D3C46 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218CE2EA19AFAD6E001D3C46 /* MediaPlayer.framework */; };
+		21B8412D19AFCDB2006113DF /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8412C19AFCDB2006113DF /* Model.m */; };
+		21B8413019AFCE15006113DF /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8412F19AFCE15006113DF /* Course.m */; };
+		21B8413319AFCE26006113DF /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8413219AFCE26006113DF /* Chapter.m */; };
+		21B8413619AFCE32006113DF /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8413519AFCE32006113DF /* Content.m */; };
+		21B8413919AFCE3F006113DF /* Challenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8413819AFCE3F006113DF /* Challenge.m */; };
 		BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */; };
 		BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15F19AF8E9000831ACC /* ViewController.swift */; };
 		BE6FF16519AF8E9000831ACC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6FF16419AF8E9000831ACC /* Images.xcassets */; };
@@ -44,6 +49,16 @@
 		218CE2E619AFA885001D3C46 /* ChallengesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengesView.m; sourceTree = "<group>"; };
 		218CE2E819AFAD4C001D3C46 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		218CE2EA19AFAD6E001D3C46 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		21B8412B19AFCDB2006113DF /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		21B8412C19AFCDB2006113DF /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		21B8412E19AFCE15006113DF /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		21B8412F19AFCE15006113DF /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		21B8413119AFCE26006113DF /* Chapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapter.h; sourceTree = "<group>"; };
+		21B8413219AFCE26006113DF /* Chapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapter.m; sourceTree = "<group>"; };
+		21B8413419AFCE32006113DF /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
+		21B8413519AFCE32006113DF /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
+		21B8413719AFCE3F006113DF /* Challenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Challenge.h; sourceTree = "<group>"; };
+		21B8413819AFCE3F006113DF /* Challenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Challenge.m; sourceTree = "<group>"; };
 		BE6FF15819AF8E8F00831ACC /* Coalition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coalition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6FF15C19AF8E9000831ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +199,16 @@
 			children = (
 				BE80EE4919AFB31A00B8639E /* Courses.swift */,
 				BE80EE4E19AFB3B500B8639E /* Courses.playground */,
+				21B8412B19AFCDB2006113DF /* Model.h */,
+				21B8412C19AFCDB2006113DF /* Model.m */,
+				21B8412E19AFCE15006113DF /* Course.h */,
+				21B8412F19AFCE15006113DF /* Course.m */,
+				21B8413119AFCE26006113DF /* Chapter.h */,
+				21B8413219AFCE26006113DF /* Chapter.m */,
+				21B8413419AFCE32006113DF /* Content.h */,
+				21B8413519AFCE32006113DF /* Content.m */,
+				21B8413719AFCE3F006113DF /* Challenge.h */,
+				21B8413819AFCE3F006113DF /* Challenge.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,8 +316,13 @@
 				BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */,
 				BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */,
 				218CE2E319AFA7FC001D3C46 /* ChallengesViewController.m in Sources */,
+				21B8412D19AFCDB2006113DF /* Model.m in Sources */,
+				21B8413019AFCE15006113DF /* Course.m in Sources */,
 				218CE2E719AFA885001D3C46 /* ChallengesView.m in Sources */,
 				BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */,
+				21B8413619AFCE32006113DF /* Content.m in Sources */,
+				21B8413919AFCE3F006113DF /* Challenge.m in Sources */,
+				21B8413319AFCE26006113DF /* Chapter.m in Sources */,
 				218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */,
 				BE80EE4519AFA69000B8639E /* CoursesCVC.swift in Sources */,
 				BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */,

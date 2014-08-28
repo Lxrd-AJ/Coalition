@@ -14,4 +14,6 @@
 
 @interface ChallengesViewController : UIViewController
 
+@property(nonatomic,strong) NSURL *videoURL;
+
 @end

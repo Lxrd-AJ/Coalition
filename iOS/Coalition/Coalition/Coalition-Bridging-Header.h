@@ -3,3 +3,4 @@
 //
 #import "VideoViewController.h"
 #import "ChallengesViewController.h"
+#import "Model.h"

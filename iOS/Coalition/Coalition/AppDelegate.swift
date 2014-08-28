@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
@@ -20,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window!.rootViewController = ChallengesViewController(nibName: "ChallengesViewController", bundle: NSBundle.mainBundle())
         self.window!.makeKeyAndVisible()
-
+        var model = Model()
+        
         
         return true
     }
