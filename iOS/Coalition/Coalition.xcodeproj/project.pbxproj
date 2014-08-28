@@ -10,9 +10,12 @@
 		218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2D819AF9462001D3C46 /* VideoViewController.m */; };
 		BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */; };
 		BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15F19AF8E9000831ACC /* ViewController.swift */; };
-		BE6FF16319AF8E9000831ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6FF16119AF8E9000831ACC /* Main.storyboard */; };
 		BE6FF16519AF8E9000831ACC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6FF16419AF8E9000831ACC /* Images.xcassets */; };
 		BE6FF17119AF8E9000831ACC /* CoalitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF17019AF8E9000831ACC /* CoalitionTests.swift */; };
+		BE80EE4519AFA69000B8639E /* CoursesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4419AFA69000B8639E /* CoursesCVC.swift */; };
+		BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4619AFA71800B8639E /* CoursesCVCell.swift */; };
+		BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4919AFB31A00B8639E /* Courses.swift */; };
+		BE80EE4D19AFB38D00B8639E /* coursera_videos in Resources */ = {isa = PBXBuildFile; fileRef = BE80EE4C19AFB38D00B8639E /* coursera_videos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +36,15 @@
 		BE6FF15C19AF8E9000831ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6FF15F19AF8E9000831ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE6FF16219AF8E9000831ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE6FF16419AF8E9000831ACC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE6FF16A19AF8E9000831ACC /* CoalitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoalitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6FF16F19AF8E9000831ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6FF17019AF8E9000831ACC /* CoalitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoalitionTests.swift; sourceTree = "<group>"; };
+		BE80EE4419AFA69000B8639E /* CoursesCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesCVC.swift; sourceTree = "<group>"; };
+		BE80EE4619AFA71800B8639E /* CoursesCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesCVCell.swift; sourceTree = "<group>"; };
+		BE80EE4919AFB31A00B8639E /* Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		BE80EE4C19AFB38D00B8639E /* coursera_videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = coursera_videos; sourceTree = "<group>"; };
+		BE80EE4E19AFB3B500B8639E /* Courses.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Courses.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,8 @@
 		218CE2DA19AF99E0001D3C46 /* Courses */ = {
 			isa = PBXGroup;
 			children = (
+				BE80EE4419AFA69000B8639E /* CoursesCVC.swift */,
+				BE80EE4619AFA71800B8639E /* CoursesCVCell.swift */,
 			);
 			name = Courses;
 			sourceTree = "<group>";
@@ -109,14 +118,15 @@
 		BE6FF15A19AF8E8F00831ACC /* Coalition */ = {
 			isa = PBXGroup;
 			children = (
+				BE80EE4819AFB2C500B8639E /* Models */,
 				218CE2DA19AF99E0001D3C46 /* Courses */,
 				218CE2DB19AF99E6001D3C46 /* Course Detail */,
 				BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */,
 				BE6FF15F19AF8E9000831ACC /* ViewController.swift */,
-				BE6FF16119AF8E9000831ACC /* Main.storyboard */,
 				BE6FF16419AF8E9000831ACC /* Images.xcassets */,
 				BE6FF15B19AF8E9000831ACC /* Supporting Files */,
 				218CE2D719AF9462001D3C46 /* VideoViewController.h */,
+				BE80EE4C19AFB38D00B8639E /* coursera_videos */,
 				218CE2D819AF9462001D3C46 /* VideoViewController.m */,
 			);
 			path = Coalition;
@@ -146,6 +156,15 @@
 				BE6FF16F19AF8E9000831ACC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE80EE4819AFB2C500B8639E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE80EE4919AFB31A00B8639E /* Courses.swift */,
+				BE80EE4E19AFB3B500B8639E /* Courses.playground */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6FF16319AF8E9000831ACC /* Main.storyboard in Resources */,
+				BE80EE4D19AFB38D00B8639E /* coursera_videos in Resources */,
 				BE6FF16519AF8E9000831ACC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +268,10 @@
 			files = (
 				BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */,
 				BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */,
+				BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */,
 				218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */,
+				BE80EE4519AFA69000B8639E /* CoursesCVC.swift in Sources */,
+				BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,17 +292,6 @@
 			targetProxy = BE6FF16B19AF8E9000831ACC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		BE6FF16119AF8E9000831ACC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE6FF16219AF8E9000831ACC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BE6FF17219AF8E9000831ACC /* Debug */ = {
@@ -367,6 +378,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coalition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Coalition/Coalition-Bridging-Header.h";
@@ -382,6 +394,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coalition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Coalition/Coalition-Bridging-Header.h";
