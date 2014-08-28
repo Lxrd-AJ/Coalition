@@ -10,6 +10,9 @@
 
 @interface ChallengesViewController ()
 
+@property(nonatomic,strong) MPMoviePlayerController *moviePlayer;
+@property(nonatomic,strong) NSURL *videoURL;
+
 @end
 
 @implementation ChallengesViewController
@@ -24,6 +27,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)startPlayingVideo:(id)sender{
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    
 }
 
 /*
