@@ -14,6 +14,7 @@ class CoursesCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         self.thumbnail = UIImageView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(frame), height: CGRectGetHeight(frame)))
         super.init(frame: frame)
+        self.addSubview(self.thumbnail)
     }
 
     required init(coder aDecoder: NSCoder) {
