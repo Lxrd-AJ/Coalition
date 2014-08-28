@@ -17,12 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        // FIXME: can't use init(), runtime error
-        let coursesCVC = CoursesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        let nvc = UINavigationController(rootViewController: coursesCVC)
-        nvc.navigationBar.barStyle = UIBarStyle.Black
-        self.window!.rootViewController = nvc
+        self.window!.rootViewController = ChallengesViewController(nibName: "ChallengesViewController", bundle: NSBundle.mainBundle())
         self.window!.makeKeyAndVisible()
         
         return true
