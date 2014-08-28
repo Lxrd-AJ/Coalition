@@ -54,7 +54,6 @@
                 NSString *urlString = [chapterPath stringByAppendingString:content];
                 aContent.url = [NSURL fileURLWithPath:urlString];
                 aContent.thumbnail = [self thumbnailFromVideoAtURL:aContent.url];
-                //NSLog( @"%@ is %@ at URL: %@", aContent.name, aContent.thumbnail, aContent.url );
                 //add the content to the chapter
                 [aChapter.contents addObject:aContent];
             }
