@@ -8,6 +8,7 @@
 
 #import "VideoViewController.h"
 #import "SAVideoRangeSlider.h"
+#import <UIKit/UIKit.h>
 
 @interface VideoViewController ()
 
@@ -27,7 +28,7 @@
     self.playingArea.translatesAutoresizingMaskIntoConstraints = NO;
     //build UI
     [self prepareVideoPlayerAt:self.videoURL];
-    
+    [self buildQuestionAskingUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,6 +118,14 @@
 -(void)videoRange:(SAVideoRangeSlider *)videoRange didChangeLeftPosition:(CGFloat)leftPosition rightPosition:(CGFloat)rightPosition
 {
     
+}
+
+-(void)buildQuestionAskingUI
+{
+    Class popOverClass = NSClassFromString(@"UIPopoverController");
+    if (popOverClass != nil && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        UIPopoverController *popOver = [[UIPopoverController alloc] initWithContentViewController:self];
+    }
 }
 
 /*
