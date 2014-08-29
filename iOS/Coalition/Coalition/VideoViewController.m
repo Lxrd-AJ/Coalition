@@ -85,7 +85,7 @@
         [mySAVideoRangeSlider setPopoverBubbleSize:200 height:100];
         mySAVideoRangeSlider.delegate = self;
         mySAVideoRangeSlider.minGap = 5; // optional, seconds
-        mySAVideoRangeSlider.maxGap = 120; // optional, seconds
+        mySAVideoRangeSlider.maxGap = 60; // optional, seconds
         [self.view addSubview:mySAVideoRangeSlider];
         
         //create thumbnails
@@ -145,7 +145,8 @@
 
 -(void)videoRange:(SAVideoRangeSlider *)videoRange didChangeLeftPosition:(CGFloat)leftPosition rightPosition:(CGFloat)rightPosition
 {
-    
+    self.begin = leftPosition;
+    self.end = rightPosition;
 }
 
 -(void)buildQuestionAskingUI
@@ -172,7 +173,7 @@
 
 -(void)saveChallenge:(id)sender
 {
-//    NSLog(@"%@, %@", self.question, self.answer);
+    NSLog(@"%f, %f", self.begin, self.end);
     Challenge *aChallenge = [[Challenge alloc] init];
     aChallenge.name = self.content.name;
     aChallenge.question = self.question.text;
@@ -181,6 +182,8 @@
     aChallenge.url = self.content.url;
     aChallenge.begin = self.begin;
     aChallenge.end = self.end;
+    [self showTrimmedVideo:aChallenge start:aChallenge.begin end:aChallenge.end];
+    
     [self.content.challenges addObject:aChallenge];
     [self.navigationController popViewControllerAnimated:YES];
 }
