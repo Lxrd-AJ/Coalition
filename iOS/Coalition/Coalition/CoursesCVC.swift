@@ -20,7 +20,9 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
         
         // Setup our flow layout
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSizeMake(120, 120)
+        flowLayout.itemSize = CGSizeMake(CGRectGetWidth(UIScreen.mainScreen().bounds) / 2 - 5, 250)
+        flowLayout.minimumInteritemSpacing = 0.0;
+        flowLayout.minimumLineSpacing = 10.0;
         
         let collectionViewRect: CGRect = UIScreen().bounds
         let collectionView = UICollectionView(frame: collectionViewRect, collectionViewLayout: flowLayout)
@@ -38,10 +40,11 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
     override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
         
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellIdentifier, forIndexPath: indexPath) as CoursesCollectionViewCell
-        cell.bounds = CGRectMake(0, 0, 100, 100)
+//        cell.bounds = CGRectMake(0, 0, , 100)
         cell.backgroundColor = UIColor.whiteColor()
         var contents = self.model.courses.objectAtIndex(indexPath.item).chapters!.objectAtIndex(0).contents as NSMutableArray
         cell.thumbnail.image = contents.objectAtIndex(0).thumbnail
+        cell.titleLabel.text = self.model.courses.objectAtIndex(indexPath.item).name
         
         return cell as UICollectionViewCell
         
@@ -51,6 +54,7 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
         var courseDetailCVC = CourseDetailCVC(collectionViewLayout: UICollectionViewFlowLayout())
         courseDetailCVC.model = self.model
         courseDetailCVC.selectedModel = indexPath.item
+        
         self.navigationController.pushViewController(courseDetailCVC, animated: true)
 }
     

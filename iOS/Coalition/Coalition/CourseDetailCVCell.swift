@@ -9,7 +9,6 @@
 import UIKit
 
 class CourseDetailCVCell: UICollectionViewCell {
-    
     var thumbnail: UIImageView
     
     override init(frame: CGRect) {
