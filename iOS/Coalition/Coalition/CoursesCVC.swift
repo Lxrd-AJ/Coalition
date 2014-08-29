@@ -20,7 +20,7 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
         
         // Setup our flow layout
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSizeMake(CGRectGetWidth(UIScreen.mainScreen().bounds) / 2 - 5, 250)
+        flowLayout.itemSize = CGSizeMake(CGRectGetWidth(UIScreen.mainScreen().bounds) / 2 - 5, CGRectGetWidth(UIScreen.mainScreen().bounds) * 0.4)
         flowLayout.minimumInteritemSpacing = 0.0;
         flowLayout.minimumLineSpacing = 10.0;
         

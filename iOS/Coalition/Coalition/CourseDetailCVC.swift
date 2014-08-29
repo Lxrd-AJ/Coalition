@@ -57,6 +57,14 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
         collectionViewChapters.registerClass(CourseDetailCVHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HeaderCellIdentifier)
         
         self.collectionView = collectionViewChapters
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(0).contents as NSMutableArray
+        println(contents.objectAtIndex(0).challenges)
     }
     
     func segmentedControlChanged() {

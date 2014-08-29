@@ -9,14 +9,19 @@
 #import "VideoViewController.h"
 #import "SAVideoRangeSlider.h"
 #import <UIKit/UIKit.h>
+#import "Challenge.h"
 
-#define kOFFSET_FOR_KEYBOARD 80.0
+#define kOFFSET_FOR_KEYBOARD 120.0
 
 @interface VideoViewController ()
 
 @property(nonatomic,strong) MPMoviePlayerController *moviePlayer;
 @property (weak, nonatomic) IBOutlet UIView *playingArea;
 @property(nonatomic,strong) NSURL *videoURL;
+@property (nonatomic, strong) UITextField *question;
+@property (nonatomic, strong) UITextField *answer;
+@property (nonatomic, assign) float begin;
+@property (nonatomic, assign) float end;
 
 @end
 
@@ -155,6 +160,28 @@
     [questionButton addTarget:self action:@selector(performAddWithAlertView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:questionButton];
     
+    UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(0, sHeight - 50, [UIScreen mainScreen].bounds.size.width, sHeight * 0.05)];
+    [saveButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:200 alpha:0.7] forState:UIControlStateNormal];
+    [saveButton setTitleColor:[UIColor colorWithRed:10 green:0 blue:0 alpha:0.4] forState:UIControlStateHighlighted];
+    [saveButton setTitle:@"Create Challenge" forState:UIControlStateNormal];
+    [saveButton setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.09]];
+    [saveButton addTarget:self action:@selector(saveChallenge:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:saveButton];
+}
+
+-(void)saveChallenge:(id)sender
+{
+//    NSLog(@"%@, %@", self.question, self.answer);
+    Challenge *aChallenge = [[Challenge alloc] init];
+    aChallenge.name = self.content.name;
+    aChallenge.question = self.question.text;
+    aChallenge.answer = self.answer.text;
+    aChallenge.completed = NO;
+    aChallenge.url = self.content.url;
+    aChallenge.begin = self.begin;
+    aChallenge.end = self.end;
+    [self.content.challenges addObject:aChallenge];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)performAddWithAlertView:(id)sender
@@ -177,22 +204,20 @@
 {
     CGFloat sWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat sHeight = [UIScreen mainScreen].bounds.size.height;
-    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"QandA" owner:self options:nil] firstObject];
-    if ( view != nil ) {
-        [self.view addSubview:view];
-        view.frame = CGRectMake(0, ([UIScreen mainScreen].bounds.size.height * 0.4) + 65 + 70 + 50, sWidth, sHeight * 0.4);
-    }
     
     //Create the question textfield
-    UITextField *questionField = [[UITextField alloc] initWithFrame:CGRectMake(0, (sHeight * 0.4) + 65 + 70 + 50 , sWidth / 2, sHeight * 0.4 )];
+    UITextField *questionField = [[UITextField alloc] initWithFrame:CGRectMake(0, (sHeight * 0.4) + 65 + 70 + 50 , sWidth / 2, sHeight * 0.35 )];
     [questionField setBorderStyle:UITextBorderStyleLine];
     questionField.placeholder = @"Enter your Question Here";
     [self.view addSubview:questionField];
     
-    UITextField *answerField = [[UITextField alloc] initWithFrame:CGRectMake(sWidth/2, (sHeight * 0.4) + 65 + 70 + 50, sWidth/2, sHeight * 0.4)];
+    UITextField *answerField = [[UITextField alloc] initWithFrame:CGRectMake(sWidth/2, (sHeight * 0.4) + 65 + 70 + 50, sWidth/2, sHeight * 0.35)];
     [answerField setBorderStyle:UITextBorderStyleLine];
     answerField.placeholder = @"Enter your Answer Here";
     [self.view addSubview:answerField];
+    
+    self.question = questionField;
+    self.answer = answerField;
 }
 
 -(void)keyboardWillShow {

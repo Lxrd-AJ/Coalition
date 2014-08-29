@@ -13,8 +13,6 @@
 		211963F119B025C80083A9AF /* SAVideoRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 211963ED19B025C80083A9AF /* SAVideoRangeSlider.m */; };
 		211963F319B025EB0083A9AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211963F219B025EB0083A9AF /* QuartzCore.framework */; };
 		211963F519B025F30083A9AF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211963F419B025F30083A9AF /* CoreMedia.framework */; };
-		211963F919B08B890083A9AF /* QandA.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211963F819B08B890083A9AF /* QandA.xib */; };
-		211963FC19B08E1F0083A9AF /* QandA.m in Sources */ = {isa = PBXBuildFile; fileRef = 211963FB19B08E1F0083A9AF /* QandA.m */; };
 		218CE2E319AFA7FC001D3C46 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E119AFA7FC001D3C46 /* VideoViewController.m */; };
 		218CE2E419AFA7FC001D3C46 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CE2E219AFA7FC001D3C46 /* VideoViewController.xib */; };
 		218CE2E719AFA885001D3C46 /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E619AFA885001D3C46 /* VideoView.m */; };
@@ -59,9 +57,6 @@
 		211963ED19B025C80083A9AF /* SAVideoRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoRangeSlider.m; sourceTree = "<group>"; };
 		211963F219B025EB0083A9AF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		211963F419B025F30083A9AF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		211963F819B08B890083A9AF /* QandA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QandA.xib; sourceTree = "<group>"; };
-		211963FA19B08E1F0083A9AF /* QandA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QandA.h; sourceTree = "<group>"; };
-		211963FB19B08E1F0083A9AF /* QandA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QandA.m; sourceTree = "<group>"; };
 		218CE2D619AF9461001D3C46 /* Coalition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coalition-Bridging-Header.h"; sourceTree = "<group>"; };
 		218CE2E019AFA7FC001D3C46 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		218CE2E119AFA7FC001D3C46 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
@@ -163,9 +158,6 @@
 				218CE2E219AFA7FC001D3C46 /* VideoViewController.xib */,
 				218CE2E519AFA885001D3C46 /* VideoView.h */,
 				218CE2E619AFA885001D3C46 /* VideoView.m */,
-				211963F819B08B890083A9AF /* QandA.xib */,
-				211963FA19B08E1F0083A9AF /* QandA.h */,
-				211963FB19B08E1F0083A9AF /* QandA.m */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -336,7 +328,6 @@
 				BE80EE5119AFBC9500B8639E /* coursera_videos in Resources */,
 				218CE2E419AFA7FC001D3C46 /* VideoViewController.xib in Resources */,
 				BE6FF16519AF8E9000831ACC /* Images.xcassets in Resources */,
-				211963F919B08B890083A9AF /* QandA.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +352,6 @@
 				BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */,
 				218CE2E319AFA7FC001D3C46 /* VideoViewController.m in Sources */,
 				21B8412D19AFCDB2006113DF /* Model.m in Sources */,
-				211963FC19B08E1F0083A9AF /* QandA.m in Sources */,
 				21B8413019AFCE15006113DF /* Course.m in Sources */,
 				211963F119B025C80083A9AF /* SAVideoRangeSlider.m in Sources */,
 				BE21177719B080FA00847B60 /* CourseDetailCVHeader.swift in Sources */,

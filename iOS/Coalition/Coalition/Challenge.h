@@ -10,4 +10,12 @@
 
 @interface Challenge : NSObject
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *question;
+@property (nonatomic, strong) NSString *answer;
+@property (nonatomic, assign) BOOL completed;
+@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, assign) float begin;
+@property (nonatomic, assign) float end;
+
 @end
