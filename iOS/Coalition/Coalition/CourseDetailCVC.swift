@@ -1,22 +1,22 @@
 //
-//  CoursesCollectionViewController.swift
+//  CourseDetailCVC.swift
 //  Coalition
 //
-//  Created by James Nocentini on 28/08/2014.
+//  Created by James Nocentini on 29/08/2014.
 //  Copyright (c) 2014 James Nocentini. All rights reserved.
 //
 
 import UIKit
 
-let CellIdentifier: String = "CellIdentifier"
-
-class CoursesCollectionViewController: UICollectionViewController, UICollectionViewDelegate {
+let CourseCellIdentifier = "CourseCellId"
+class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var model: Model!
+    var selectedModel: Int!
     
     override func loadView() {
         super.loadView()
         
-        self.navigationItem.title = "Courses"
+        self.navigationItem.title = "Chapters"
         
         // Setup our flow layout
         let flowLayout = UICollectionViewFlowLayout()
@@ -27,35 +27,30 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.registerClass(CoursesCollectionViewCell.self, forCellWithReuseIdentifier: CellIdentifier)
+        collectionView.registerClass(CourseDetailCVCell.self, forCellWithReuseIdentifier: CourseCellIdentifier)
         
         self.collectionView = collectionView
-        
-        
-        
     }
     
     override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
-        
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellIdentifier, forIndexPath: indexPath) as CoursesCollectionViewCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(CourseCellIdentifier, forIndexPath: indexPath) as CourseDetailCVCell
         cell.bounds = CGRectMake(0, 0, 100, 100)
         cell.backgroundColor = UIColor.whiteColor()
-        var contents = self.model.courses.objectAtIndex(0).chapters!.objectAtIndex(0).contents as NSMutableArray
+        var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(indexPath.section).contents as NSMutableArray
         cell.thumbnail.image = contents.objectAtIndex(indexPath.item).thumbnail
         
         return cell as UICollectionViewCell
-        
     }
     
-    override func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
-        var courseDetailCVC = CourseDetailCVC(collectionViewLayout: UICollectionViewFlowLayout())
-        courseDetailCVC.model = self.model
-        courseDetailCVC.selectedModel = indexPath.item
-        self.navigationController.pushViewController(courseDetailCVC, animated: true)
-}
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
+        return self.model.courses.objectAtIndex(self.selectedModel).chapters!.count
+    }
     
     override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
-        return self.model.courses.count
+        var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(section).contents as NSMutableArray
+        return contents.count
     }
+    
+    
     
 }

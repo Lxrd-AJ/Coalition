@@ -26,6 +26,8 @@
 		BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4619AFA71800B8639E /* CoursesCVCell.swift */; };
 		BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4919AFB31A00B8639E /* Courses.swift */; };
 		BE80EE5119AFBC9500B8639E /* coursera_videos in Resources */ = {isa = PBXBuildFile; fileRef = BE80EE5019AFBC9500B8639E /* coursera_videos */; };
+		BE80EE5319AFFAFF00B8639E /* CourseDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE5219AFFAFF00B8639E /* CourseDetailCVC.swift */; };
+		BE80EE5519AFFB2900B8639E /* CourseDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE5419AFFB2900B8639E /* CourseDetailCVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		BE80EE4919AFB31A00B8639E /* Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		BE80EE4E19AFB3B500B8639E /* Courses.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Courses.playground; sourceTree = "<group>"; };
 		BE80EE5019AFBC9500B8639E /* coursera_videos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = coursera_videos; path = ../../../coursera_videos; sourceTree = "<group>"; };
+		BE80EE5219AFFAFF00B8639E /* CourseDetailCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCVC.swift; sourceTree = "<group>"; };
+		BE80EE5419AFFB2900B8639E /* CourseDetailCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 		218CE2DB19AF99E6001D3C46 /* Course Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BE80EE5219AFFAFF00B8639E /* CourseDetailCVC.swift */,
+				BE80EE5419AFFB2900B8639E /* CourseDetailCVCell.swift */,
 				218CE2DD19AF9B61001D3C46 /* Challenges */,
 				218CE2DC19AF9B55001D3C46 /* Video */,
 			);
@@ -323,7 +329,9 @@
 				21B8413619AFCE32006113DF /* Content.m in Sources */,
 				21B8413919AFCE3F006113DF /* Challenge.m in Sources */,
 				21B8413319AFCE26006113DF /* Chapter.m in Sources */,
+				BE80EE5319AFFAFF00B8639E /* CourseDetailCVC.swift in Sources */,
 				218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */,
+				BE80EE5519AFFB2900B8639E /* CourseDetailCVCell.swift in Sources */,
 				BE80EE4519AFA69000B8639E /* CoursesCVC.swift in Sources */,
 				BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */,
 			);
