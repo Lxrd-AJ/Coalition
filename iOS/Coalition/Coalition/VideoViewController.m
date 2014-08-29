@@ -33,6 +33,17 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    // register for keyboard notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+
     [super viewWillAppear:animated];
     //build UI
     for (UIView *v in self.view.subviews) {
@@ -174,8 +185,14 @@
     
     //Create the question textfield
     UITextField *questionField = [[UITextField alloc] initWithFrame:CGRectMake(0, (sHeight * 0.4) + 65 + 70 + 50 , sWidth / 2, sHeight * 0.4 )];
+    [questionField setBorderStyle:UITextBorderStyleLine];
     questionField.placeholder = @"Enter your Question Here";
     [self.view addSubview:questionField];
+    
+    UITextField *answerField = [[UITextField alloc] initWithFrame:CGRectMake(sWidth/2, (sHeight * 0.4) + 65 + 70 + 50, sWidth/2, sHeight * 0.4)];
+    [answerField setBorderStyle:UITextBorderStyleLine];
+    answerField.placeholder = @"Enter your Answer Here";
+    [self.view addSubview:answerField];
 }
 
 -(void)keyboardWillShow {
@@ -203,10 +220,12 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender
 {
-    //move the main view, so that the keyboard does not hide it.
-    if  (self.view.frame.origin.y >= 0)
-    {
-        [self setViewMovedUp:YES];
+    if (sender != nil ) {
+        //move the main view, so that the keyboard does not hide it.
+        if  (self.view.frame.origin.y >= 0)
+        {
+            [self setViewMovedUp:YES];
+        }
     }
 
 }
@@ -245,6 +264,14 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self stopPlayingVideo];
+    // unregister for keyboard notifications while not visible.
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 
