@@ -25,6 +25,8 @@
 		BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4619AFA71800B8639E /* CoursesCVCell.swift */; };
 		BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE4919AFB31A00B8639E /* Courses.swift */; };
 		BE80EE5119AFBC9500B8639E /* coursera_videos in Resources */ = {isa = PBXBuildFile; fileRef = BE80EE5019AFBC9500B8639E /* coursera_videos */; };
+		BE80EE5619B0081C00B8639E /* CourseDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE5219AFFAFF00B8639E /* CourseDetailCVC.swift */; };
+		BE80EE5719B0083800B8639E /* CourseDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80EE5419AFFB2900B8639E /* CourseDetailCVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		BE80EE4919AFB31A00B8639E /* Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		BE80EE4E19AFB3B500B8639E /* Courses.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Courses.playground; sourceTree = "<group>"; };
 		BE80EE5019AFBC9500B8639E /* coursera_videos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = coursera_videos; path = ../../../coursera_videos; sourceTree = "<group>"; };
+		BE80EE5219AFFAFF00B8639E /* CourseDetailCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCVC.swift; sourceTree = "<group>"; };
+		BE80EE5419AFFB2900B8639E /* CourseDetailCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE80EE5719B0083800B8639E /* CourseDetailCVCell.swift in Sources */,
+				BE80EE5619B0081C00B8639E /* CourseDetailCVC.swift in Sources */,
 				BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */,
 				BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */,
 				218CE2E319AFA7FC001D3C46 /* VideoViewController.m in Sources */,

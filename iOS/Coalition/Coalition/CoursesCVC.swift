@@ -42,11 +42,17 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
         cell.backgroundColor = UIColor.whiteColor()
         var contents = self.model.courses.objectAtIndex(0).chapters!.objectAtIndex(0).contents as NSMutableArray
         cell.thumbnail.image = contents.objectAtIndex(indexPath.item).thumbnail
-        println(cell.thumbnail.image)
         
         return cell as UICollectionViewCell
         
     }
+    
+    override func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+        var courseDetailCVC = CourseDetailCVC(collectionViewLayout: UICollectionViewFlowLayout())
+        courseDetailCVC.model = self.model
+        courseDetailCVC.selectedModel = indexPath.item
+        self.navigationController.pushViewController(courseDetailCVC, animated: true)
+}
     
     override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
         return self.model.courses.count
