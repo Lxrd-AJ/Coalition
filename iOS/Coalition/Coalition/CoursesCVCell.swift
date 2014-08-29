@@ -10,11 +10,15 @@ import UIKit
 
 class CoursesCollectionViewCell: UICollectionViewCell {
     var thumbnail: UIImageView
+    var titleLabel: UILabel!
     
     override init(frame: CGRect) {
-        self.thumbnail = UIImageView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(frame), height: CGRectGetHeight(frame)))
+        self.thumbnail = UIImageView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(frame), height: CGRectGetHeight(frame) - 50))
+        self.titleLabel = UILabel(frame: CGRect(x: 0, y: CGRectGetHeight(frame) - 50, width: CGRectGetWidth(frame), height: 50))
+        self.titleLabel.frame.inset(dx: 10.0, dy: 10.0)
         super.init(frame: frame)
         self.addSubview(self.thumbnail)
+        self.addSubview(self.titleLabel)
     }
 
     required init(coder aDecoder: NSCoder) {
