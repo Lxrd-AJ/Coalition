@@ -47,7 +47,7 @@
         [self.moviePlayer setControlStyle:MPMovieControlStyleEmbedded];
         [self.moviePlayer prepareToPlay];
         self.moviePlayer.shouldAutoplay = NO;
-        self.moviePlayer.view.frame = CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, 400);
+        self.moviePlayer.view.frame = CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.4 );
         [self.view addSubview:self.moviePlayer.view];
         
         //create thumbnails
