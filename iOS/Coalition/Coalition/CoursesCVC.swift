@@ -40,8 +40,8 @@ class CoursesCollectionViewController: UICollectionViewController, UICollectionV
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellIdentifier, forIndexPath: indexPath) as CoursesCollectionViewCell
         cell.bounds = CGRectMake(0, 0, 100, 100)
         cell.backgroundColor = UIColor.whiteColor()
-        var contents = self.model.courses.objectAtIndex(0).chapters!.objectAtIndex(0).contents as NSMutableArray
-        cell.thumbnail.image = contents.objectAtIndex(indexPath.item).thumbnail
+        var contents = self.model.courses.objectAtIndex(indexPath.item).chapters!.objectAtIndex(0).contents as NSMutableArray
+        cell.thumbnail.image = contents.objectAtIndex(0).thumbnail
         
         return cell as UICollectionViewCell
         
