@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 James Nocentini. All rights reserved.
 //
 
-#import "ChallengesView.h"
+#import "VideoView.h"
 
-@implementation ChallengesView
+@implementation VideoView
 
 /*
 // Only override drawRect: if you perform custom drawing.

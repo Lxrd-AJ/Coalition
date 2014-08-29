@@ -52,5 +52,12 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     
+    override func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+        var vvc = VideoViewController()
+        var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(indexPath.section).contents as NSMutableArray
+        vvc.content = contents.objectAtIndex(indexPath.item) as Content
+        self.navigationController.pushViewController(vvc, animated: true)
+    }
+    
     
 }
