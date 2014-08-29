@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UITextField *answer;
 @property (nonatomic, assign) float begin;
 @property (nonatomic, assign) float end;
+@property(nonatomic,strong) AVAssetExportSession *exportSession;
 
 @end
 
@@ -299,6 +300,54 @@
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
 }
+
+-(void)showTrimmedVideo:(Challenge *)challenge start:(float)startTime end:(float)stopTime{
+    
+    //[self deleteTmpFile];
+    
+    NSURL *videoFileUrl = self.content.url;
+    
+    AVAsset *anAsset = [[AVURLAsset alloc] initWithURL:videoFileUrl options:nil];
+    NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:anAsset];
+    if ([compatiblePresets containsObject:AVAssetExportPresetMediumQuality]) {
+        
+        self.exportSession = [[AVAssetExportSession alloc]
+                              initWithAsset:anAsset presetName:AVAssetExportPresetPassthrough];
+        // Implementation continues.
+        
+        NSURL *furl = challenge.url;
+        
+        self.exportSession.outputURL = furl;
+        self.exportSession.outputFileType = AVFileTypeQuickTimeMovie;
+        
+        CMTime start = CMTimeMakeWithSeconds( startTime, anAsset.duration.timescale);
+        CMTime duration = CMTimeMakeWithSeconds(stopTime-startTime, anAsset.duration.timescale);
+        CMTimeRange range = CMTimeRangeMake(start, duration);
+        self.exportSession.timeRange = range;
+        
+        [self.exportSession exportAsynchronouslyWithCompletionHandler:^{
+            
+            switch ([self.exportSession status]) {
+                case AVAssetExportSessionStatusFailed:
+                    NSLog(@"Export failed: %@", [[self.exportSession error] localizedDescription]);
+                    break;
+                case AVAssetExportSessionStatusCancelled:
+                    NSLog(@"Export canceled");
+                    break;
+                default:
+                    NSLog(@"NONE");
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //do nothing for now
+                    });
+                    
+                    break;
+            }
+        }];
+        
+    }
+    
+}
+
 
 
 /*
