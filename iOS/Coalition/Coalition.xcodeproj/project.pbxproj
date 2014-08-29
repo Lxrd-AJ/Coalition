@@ -103,20 +103,12 @@
 		218CE2DB19AF99E6001D3C46 /* Course Detail */ = {
 			isa = PBXGroup;
 			children = (
-				218CE2DD19AF9B61001D3C46 /* Challenges */,
-				218CE2DC19AF9B55001D3C46 /* Video */,
+				218CE2DD19AF9B61001D3C46 /* Video  */,
 			);
 			name = "Course Detail";
 			sourceTree = "<group>";
 		};
-		218CE2DC19AF9B55001D3C46 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Video;
-			sourceTree = "<group>";
-		};
-		218CE2DD19AF9B61001D3C46 /* Challenges */ = {
+		218CE2DD19AF9B61001D3C46 /* Video  */ = {
 			isa = PBXGroup;
 			children = (
 				218CE2E019AFA7FC001D3C46 /* VideoViewController.h */,
@@ -125,7 +117,7 @@
 				218CE2E519AFA885001D3C46 /* VideoView.h */,
 				218CE2E619AFA885001D3C46 /* VideoView.m */,
 			);
-			name = Challenges;
+			name = "Video ";
 			sourceTree = "<group>";
 		};
 		BE6FF14F19AF8E8F00831ACC = {
