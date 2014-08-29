@@ -79,7 +79,7 @@
         [mySAVideoRangeSlider setPopoverBubbleSize:200 height:100];
         mySAVideoRangeSlider.delegate = self;
         mySAVideoRangeSlider.minGap = 5; // optional, seconds
-        mySAVideoRangeSlider.maxGap = 600; // optional, seconds
+        mySAVideoRangeSlider.maxGap = 120; // optional, seconds
         [self.view addSubview:mySAVideoRangeSlider];
         
         //create thumbnails
@@ -220,6 +220,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender
 {
+    [sender becomeFirstResponder];
     if (sender != nil ) {
         //move the main view, so that the keyboard does not hide it.
         if  (self.view.frame.origin.y >= 0)
