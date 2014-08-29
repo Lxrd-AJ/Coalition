@@ -7,6 +7,7 @@
 //
 
 #import "VideoViewController.h"
+#import "SAVideoRangeSlider.h"
 
 @interface VideoViewController ()
 
@@ -47,8 +48,16 @@
         [self.moviePlayer setControlStyle:MPMovieControlStyleEmbedded];
         [self.moviePlayer prepareToPlay];
         self.moviePlayer.shouldAutoplay = NO;
-        self.moviePlayer.view.frame = CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.4 );
+        self.moviePlayer.view.frame = CGRectMake(0, 65, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.4 );
         [self.view addSubview:self.moviePlayer.view];
+        
+        //Add the slider
+        SAVideoRangeSlider *mySAVideoRangeSlider = [[SAVideoRangeSlider alloc] initWithFrame:CGRectMake(0, ([UIScreen mainScreen].bounds.size.height * 0.4) + 65, [UIScreen mainScreen].bounds.size.width, 70) videoUrl:url];
+        [mySAVideoRangeSlider setPopoverBubbleSize:200 height:100];
+        mySAVideoRangeSlider.delegate = self;
+        mySAVideoRangeSlider.minGap = 5; // optional, seconds
+        mySAVideoRangeSlider.maxGap = 600; // optional, seconds
+        [self.view addSubview:mySAVideoRangeSlider];
         
         //create thumbnails
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoThumbnailIsAvailable:) name:MPMoviePlayerThumbnailImageRequestDidFinishNotification object:self.moviePlayer];

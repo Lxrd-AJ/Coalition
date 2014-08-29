@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211963EE19B025C80083A9AF /* SAResizibleBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 211963E719B025C80083A9AF /* SAResizibleBubble.m */; };
+		211963EF19B025C80083A9AF /* SASliderLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 211963E919B025C80083A9AF /* SASliderLeft.m */; };
+		211963F019B025C80083A9AF /* SASliderRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 211963EB19B025C80083A9AF /* SASliderRight.m */; };
+		211963F119B025C80083A9AF /* SAVideoRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 211963ED19B025C80083A9AF /* SAVideoRangeSlider.m */; };
+		211963F319B025EB0083A9AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211963F219B025EB0083A9AF /* QuartzCore.framework */; };
+		211963F519B025F30083A9AF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211963F419B025F30083A9AF /* CoreMedia.framework */; };
 		218CE2E319AFA7FC001D3C46 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E119AFA7FC001D3C46 /* VideoViewController.m */; };
 		218CE2E419AFA7FC001D3C46 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CE2E219AFA7FC001D3C46 /* VideoViewController.xib */; };
 		218CE2E719AFA885001D3C46 /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E619AFA885001D3C46 /* VideoView.m */; };
@@ -40,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		211963E619B025C80083A9AF /* SAResizibleBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAResizibleBubble.h; sourceTree = "<group>"; };
+		211963E719B025C80083A9AF /* SAResizibleBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAResizibleBubble.m; sourceTree = "<group>"; };
+		211963E819B025C80083A9AF /* SASliderLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderLeft.h; sourceTree = "<group>"; };
+		211963E919B025C80083A9AF /* SASliderLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderLeft.m; sourceTree = "<group>"; };
+		211963EA19B025C80083A9AF /* SASliderRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderRight.h; sourceTree = "<group>"; };
+		211963EB19B025C80083A9AF /* SASliderRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderRight.m; sourceTree = "<group>"; };
+		211963EC19B025C80083A9AF /* SAVideoRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoRangeSlider.h; sourceTree = "<group>"; };
+		211963ED19B025C80083A9AF /* SAVideoRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoRangeSlider.m; sourceTree = "<group>"; };
+		211963F219B025EB0083A9AF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		211963F419B025F30083A9AF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		218CE2D619AF9461001D3C46 /* Coalition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coalition-Bridging-Header.h"; sourceTree = "<group>"; };
 		218CE2E019AFA7FC001D3C46 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		218CE2E119AFA7FC001D3C46 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
@@ -80,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211963F519B025F30083A9AF /* CoreMedia.framework in Frameworks */,
+				211963F319B025EB0083A9AF /* QuartzCore.framework in Frameworks */,
 				218CE2EB19AFAD6E001D3C46 /* MediaPlayer.framework in Frameworks */,
 				218CE2E919AFAD4C001D3C46 /* AVFoundation.framework in Frameworks */,
 			);
@@ -95,6 +113,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211963E519B025C80083A9AF /* SAVideoRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				211963E619B025C80083A9AF /* SAResizibleBubble.h */,
+				211963E719B025C80083A9AF /* SAResizibleBubble.m */,
+				211963E819B025C80083A9AF /* SASliderLeft.h */,
+				211963E919B025C80083A9AF /* SASliderLeft.m */,
+				211963EA19B025C80083A9AF /* SASliderRight.h */,
+				211963EB19B025C80083A9AF /* SASliderRight.m */,
+				211963EC19B025C80083A9AF /* SAVideoRangeSlider.h */,
+				211963ED19B025C80083A9AF /* SAVideoRangeSlider.m */,
+			);
+			path = SAVideoRangeSlider;
+			sourceTree = "<group>";
+		};
 		218CE2DA19AF99E0001D3C46 /* Courses */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +162,8 @@
 		BE6FF14F19AF8E8F00831ACC = {
 			isa = PBXGroup;
 			children = (
+				211963F419B025F30083A9AF /* CoreMedia.framework */,
+				211963F219B025EB0083A9AF /* QuartzCore.framework */,
 				218CE2EA19AFAD6E001D3C46 /* MediaPlayer.framework */,
 				218CE2E819AFAD4C001D3C46 /* AVFoundation.framework */,
 				BE6FF15A19AF8E8F00831ACC /* Coalition */,
@@ -164,6 +199,7 @@
 		BE6FF15B19AF8E9000831ACC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				211963E519B025C80083A9AF /* SAVideoRangeSlider */,
 				218CE2D619AF9461001D3C46 /* Coalition-Bridging-Header.h */,
 				BE6FF15C19AF8E9000831ACC /* Info.plist */,
 			);
@@ -308,15 +344,19 @@
 			files = (
 				BE80EE5719B0083800B8639E /* CourseDetailCVCell.swift in Sources */,
 				BE80EE5619B0081C00B8639E /* CourseDetailCVC.swift in Sources */,
+				211963EE19B025C80083A9AF /* SAResizibleBubble.m in Sources */,
 				BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */,
 				BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */,
 				218CE2E319AFA7FC001D3C46 /* VideoViewController.m in Sources */,
 				21B8412D19AFCDB2006113DF /* Model.m in Sources */,
 				21B8413019AFCE15006113DF /* Course.m in Sources */,
+				211963F119B025C80083A9AF /* SAVideoRangeSlider.m in Sources */,
 				218CE2E719AFA885001D3C46 /* VideoView.m in Sources */,
 				BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */,
 				21B8413619AFCE32006113DF /* Content.m in Sources */,
+				211963EF19B025C80083A9AF /* SASliderLeft.m in Sources */,
 				21B8413919AFCE3F006113DF /* Challenge.m in Sources */,
+				211963F019B025C80083A9AF /* SASliderRight.m in Sources */,
 				21B8413319AFCE26006113DF /* Chapter.m in Sources */,
 				BE80EE4519AFA69000B8639E /* CoursesCVC.swift in Sources */,
 				BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */,
