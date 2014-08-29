@@ -123,10 +123,28 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
     
     
     override func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
-        var vvc = VideoViewController()
-        var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(indexPath.section).contents as NSMutableArray
-        vvc.content = contents.objectAtIndex(indexPath.item) as Content
-        self.navigationController.pushViewController(vvc, animated: true)
+        
+        if(self.segmentedControl.selectedSegmentIndex == 1) {
+            var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(indexPath.section).contents as NSMutableArray
+            var challenges = contents.objectAtIndex(0).challenges!
+            var challenge = challenges.objectAtIndex(indexPath.item) as Challenge
+            var player = MPMoviePlayerController(contentURL: challenge.url)
+            println(challenge.url)
+            player.scalingMode = MPMovieScalingMode.AspectFit
+            player.controlStyle = MPMovieControlStyle.Embedded
+            player.view.frame = UIScreen.mainScreen().bounds
+            player.prepareToPlay()
+            player.setFullscreen(true, animated: true)
+            self.collectionView.addSubview(player.view)
+            
+        } else {
+            var vvc = VideoViewController()
+            var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(indexPath.section).contents as NSMutableArray
+            vvc.content = contents.objectAtIndex(indexPath.item) as Content
+            self.navigationController.pushViewController(vvc, animated: true)
+        }
+        
+        
     }
     
     override func collectionView(collectionView: UICollectionView!, viewForSupplementaryElementOfKind kind: String!, atIndexPath indexPath: NSIndexPath!) -> UICollectionReusableView! {

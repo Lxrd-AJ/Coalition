@@ -18,7 +18,7 @@ class CourseDetailCVChallengeCell: UICollectionViewCell {
         videoButton.setTitle("hello", forState: UIControlState.Normal)
         super.init(frame: frame)
         self.addSubview(self.textLabel)
-        self.addSubview(self.videoButton)
+//        self.addSubview(self.videoButton)
         self.backgroundColor = UIColor.whiteColor()
         self.textLabel.textColor = UIColor.blackColor()
     }
