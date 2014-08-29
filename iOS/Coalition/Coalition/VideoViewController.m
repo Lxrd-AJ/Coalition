@@ -114,6 +114,11 @@
     [self.moviePlayer play];
 }
 
+-(void)videoRange:(SAVideoRangeSlider *)videoRange didChangeLeftPosition:(CGFloat)leftPosition rightPosition:(CGFloat)rightPosition
+{
+    
+}
+
 /*
 #pragma mark - Navigation
 
