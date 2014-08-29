@@ -10,6 +10,7 @@ import UIKit
 
 let CourseCellIdentifier = "CourseCellId"
 let HeaderCellIdentifier = "HeaderId"
+let CourseChallengeIdentfier = "ChallengeCellId"
 
 class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var model: Model!
@@ -30,16 +31,16 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
         
         //Here we need to create a new collectionview and set it to self.collectionView
         let flowLayoutChallenges = UICollectionViewFlowLayout()
-        flowLayoutChallenges.itemSize = CGSizeMake(100, 100)
+        flowLayoutChallenges.itemSize = CGSizeMake(UIScreen.mainScreen().bounds.width, 100)
         //            flowLayoutChallenges.headerReferenceSize = CGSizeMake(60, 80);
         flowLayoutChallenges.minimumInteritemSpacing = 10.0;
         flowLayoutChallenges.minimumLineSpacing = 10.0;
         
         let collectionViewRectChallenges = CGRect(x: 0, y: 60, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds))
-        let collectionViewChallenges = UICollectionView(frame: collectionViewRectChallenges, collectionViewLayout: flowLayoutChallenges)
+        collectionViewChallenges = UICollectionView(frame: collectionViewRectChallenges, collectionViewLayout: flowLayoutChallenges)
         collectionViewChallenges.dataSource = self
         collectionViewChallenges.delegate = self
-        
+        collectionViewChallenges.registerClass(CourseDetailCVChallengeCell.self, forCellWithReuseIdentifier: CourseChallengeIdentfier)
         
         // Setup our flow layout
         let flowLayout = UICollectionViewFlowLayout()
@@ -58,7 +59,6 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
         
         self.collectionView = collectionViewChapters
         
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -72,10 +72,9 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
         if(self.segmentedControl.selectedSegmentIndex == 1) {
             
             self.collectionView = collectionViewChallenges
+            self.collectionView.frame = CGRect(x: 0, y: 60, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds))
             
         } else {
-            
-            
             
             self.collectionView = collectionViewChapters
             
@@ -85,14 +84,16 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
-        
+        var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(indexPath.section).contents as NSMutableArray
         if(self.segmentedControl.selectedSegmentIndex == 1) {
-            return UICollectionViewCell()
+            var cell = collectionView.dequeueReusableCellWithReuseIdentifier(CourseChallengeIdentfier, forIndexPath: indexPath) as CourseDetailCVChallengeCell
+            cell.textLabel.text = contents.objectAtIndex(0).challenges!.objectAtIndex(indexPath.item).question as String
+            return cell
         } else {
             var cell = collectionView.dequeueReusableCellWithReuseIdentifier(CourseCellIdentifier, forIndexPath: indexPath) as CourseDetailCVCell
             cell.bounds = CGRectMake(0, 0, 120, 120)
             cell.backgroundColor = UIColor.whiteColor()
-            var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(indexPath.section).contents as NSMutableArray
+            
             cell.thumbnail.image = contents.objectAtIndex(indexPath.item).thumbnail
             
             return cell as UICollectionViewCell
@@ -103,7 +104,7 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
         
         if(self.segmentedControl.selectedSegmentIndex == 1) {
-            return 0
+            return self.model.courses.objectAtIndex(self.selectedModel).chapters!.count
         } else {
             return self.model.courses.objectAtIndex(self.selectedModel).chapters!.count
         }
@@ -112,7 +113,8 @@ class CourseDetailCVC: UICollectionViewController, UICollectionViewDelegateFlowL
     
     override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
         if(self.segmentedControl.selectedSegmentIndex == 1) {
-            return 0
+            var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(section).contents as NSMutableArray
+            return contents.objectAtIndex(0).challenges!.count
         } else {
             var contents = self.model.courses.objectAtIndex(self.selectedModel).chapters!.objectAtIndex(section).contents as NSMutableArray
             return contents.count

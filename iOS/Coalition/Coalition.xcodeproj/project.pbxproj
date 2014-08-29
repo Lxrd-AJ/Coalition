@@ -24,6 +24,7 @@
 		21B8413619AFCE32006113DF /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8413519AFCE32006113DF /* Content.m */; };
 		21B8413919AFCE3F006113DF /* Challenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8413819AFCE3F006113DF /* Challenge.m */; };
 		BE21177719B080FA00847B60 /* CourseDetailCVHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21177619B080FA00847B60 /* CourseDetailCVHeader.swift */; };
+		BE4D1E5019B0B887004493E0 /* CourseDetailCVChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D1E4F19B0B887004493E0 /* CourseDetailCVChallengeCell.swift */; };
 		BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */; };
 		BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF15F19AF8E9000831ACC /* ViewController.swift */; };
 		BE6FF16519AF8E9000831ACC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6FF16419AF8E9000831ACC /* Images.xcassets */; };
@@ -76,6 +77,7 @@
 		21B8413719AFCE3F006113DF /* Challenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Challenge.h; sourceTree = "<group>"; };
 		21B8413819AFCE3F006113DF /* Challenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Challenge.m; sourceTree = "<group>"; };
 		BE21177619B080FA00847B60 /* CourseDetailCVHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCVHeader.swift; sourceTree = "<group>"; };
+		BE4D1E4F19B0B887004493E0 /* CourseDetailCVChallengeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCVChallengeCell.swift; sourceTree = "<group>"; };
 		BE6FF15819AF8E8F00831ACC /* Coalition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coalition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6FF15C19AF8E9000831ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6FF15D19AF8E9000831ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				BE80EE5219AFFAFF00B8639E /* CourseDetailCVC.swift */,
+				BE4D1E4F19B0B887004493E0 /* CourseDetailCVChallengeCell.swift */,
 				BE80EE5419AFFB2900B8639E /* CourseDetailCVCell.swift */,
 				BE21177619B080FA00847B60 /* CourseDetailCVHeader.swift */,
 				218CE2DD19AF9B61001D3C46 /* Video */,
@@ -357,6 +360,7 @@
 				BE21177719B080FA00847B60 /* CourseDetailCVHeader.swift in Sources */,
 				218CE2E719AFA885001D3C46 /* VideoView.m in Sources */,
 				BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */,
+				BE4D1E5019B0B887004493E0 /* CourseDetailCVChallengeCell.swift in Sources */,
 				21B8413619AFCE32006113DF /* Content.m in Sources */,
 				211963EF19B025C80083A9AF /* SASliderLeft.m in Sources */,
 				21B8413919AFCE3F006113DF /* Challenge.m in Sources */,
