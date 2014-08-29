@@ -10,6 +10,8 @@
 #import "SAVideoRangeSlider.h"
 #import <UIKit/UIKit.h>
 
+#define kOFFSET_FOR_KEYBOARD 80.0
+
 @interface VideoViewController ()
 
 @property(nonatomic,strong) MPMoviePlayerController *moviePlayer;
@@ -26,7 +28,16 @@
     self.title = @"Videos";
     self.videoURL = self.content.url;
     self.playingArea.translatesAutoresizingMaskIntoConstraints = NO;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     //build UI
+    for (UIView *v in self.view.subviews) {
+        [v removeFromSuperview];
+    }
     [self prepareVideoPlayerAt:self.videoURL];
     [self buildQuestionAskingUI];
 }
@@ -122,8 +133,9 @@
 
 -(void)buildQuestionAskingUI
 {
+    CGFloat sHeight = [UIScreen mainScreen].bounds.size.height;
     //create the question label
-    UIButton *questionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, ([UIScreen mainScreen].bounds.size.height * 0.4) + 65 + 70, [UIScreen mainScreen].bounds.size.width, 50)];
+    UIButton *questionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, ([UIScreen mainScreen].bounds.size.height * 0.4) + 65 + 70, [UIScreen mainScreen].bounds.size.width, sHeight * 0.05 )];
     questionButton.tintColor = [UIColor blueColor];
     [questionButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:200 alpha:0.7] forState:UIControlStateNormal];
     [questionButton setTitleColor:[UIColor colorWithRed:10 green:0 blue:0 alpha:0.4] forState:UIControlStateHighlighted];
@@ -144,16 +156,97 @@
 {
     NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
     if( [buttonTitle isEqualToString:@"Question and Answer"] ){
-        //do some shit
+        [self displayQandAView];
     }else if( [buttonTitle isEqualToString:@"Multiple Choice"] ){
-        //do some other shit
+        [self displayMultipleChoiceView];
     }
+}
+
+-(void)displayQandAView
+{
+    CGFloat sWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat sHeight = [UIScreen mainScreen].bounds.size.height;
+    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"QandA" owner:self options:nil] firstObject];
+    if ( view != nil ) {
+        [self.view addSubview:view];
+        view.frame = CGRectMake(0, ([UIScreen mainScreen].bounds.size.height * 0.4) + 65 + 70 + 50, sWidth, sHeight * 0.4);
+    }
+    
+    //Create the question textfield
+    UITextField *questionField = [[UITextField alloc] initWithFrame:CGRectMake(0, (sHeight * 0.4) + 65 + 70 + 50 , sWidth / 2, sHeight * 0.4 )];
+    questionField.placeholder = @"Enter your Question Here";
+    [self.view addSubview:questionField];
+}
+
+-(void)keyboardWillShow {
+    // Animate the current view out of the way
+    if (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+    else if (self.view.frame.origin.y < 0)
+    {
+        [self setViewMovedUp:NO];
+    }
+}
+
+-(void)keyboardWillHide {
+    if (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+    else if (self.view.frame.origin.y < 0)
+    {
+        [self setViewMovedUp:NO];
+    }
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)sender
+{
+    //move the main view, so that the keyboard does not hide it.
+    if  (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+
+}
+
+//method to move the view up/down whenever the keyboard is shown/dismissed
+-(void)setViewMovedUp:(BOOL)movedUp
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3]; // if you want to slide up the view
+    
+    CGRect rect = self.view.frame;
+    if (movedUp)
+    {
+        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
+        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+        rect.size.height += kOFFSET_FOR_KEYBOARD;
+    }
+    else
+    {
+        // revert back to the normal state.
+        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+        rect.size.height -= kOFFSET_FOR_KEYBOARD;
+    }
+    self.view.frame = rect;
+    
+    [UIView commitAnimations];
+}
+
+
+-(void)displayMultipleChoiceView
+{
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self stopPlayingVideo];
 }
+
 
 /*
 #pragma mark - Navigation

@@ -553,8 +553,8 @@
     // time - seconds
     NSInteger min = floor(time / 60);
     NSInteger sec = floor(time - min * 60);
-    NSString *minStr = [NSString stringWithFormat:min >= 10 ? @"%i" : @"0%i", min];
-    NSString *secStr = [NSString stringWithFormat:sec >= 10 ? @"%i" : @"0%i", sec];
+    NSString *minStr = [NSString stringWithFormat:min >= 10 ? @"%li" : @"0%li", (long)min];
+    NSString *secStr = [NSString stringWithFormat:sec >= 10 ? @"%li" : @"0%li", (long)sec];
     return [NSString stringWithFormat:@"%@:%@", minStr, secStr];
 }
 
