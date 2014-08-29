@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var model = Model()
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let cvc = ChallengesViewController(nibName: "ChallengesViewController", bundle: NSBundle.mainBundle())
+        let cvc = VideoViewController(nibName: "VideoViewController", bundle: NSBundle.mainBundle())
         let coursesCVC = CoursesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         coursesCVC.model = model
         self.window!.rootViewController = UINavigationController(rootViewController: coursesCVC)

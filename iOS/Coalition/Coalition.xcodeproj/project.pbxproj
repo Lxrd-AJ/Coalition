@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2D819AF9462001D3C46 /* VideoViewController.m */; };
-		218CE2E319AFA7FC001D3C46 /* ChallengesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E119AFA7FC001D3C46 /* ChallengesViewController.m */; };
-		218CE2E419AFA7FC001D3C46 /* ChallengesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CE2E219AFA7FC001D3C46 /* ChallengesViewController.xib */; };
-		218CE2E719AFA885001D3C46 /* ChallengesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E619AFA885001D3C46 /* ChallengesView.m */; };
+		218CE2E319AFA7FC001D3C46 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E119AFA7FC001D3C46 /* VideoViewController.m */; };
+		218CE2E419AFA7FC001D3C46 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CE2E219AFA7FC001D3C46 /* VideoViewController.xib */; };
+		218CE2E719AFA885001D3C46 /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE2E619AFA885001D3C46 /* VideoView.m */; };
 		218CE2E919AFAD4C001D3C46 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218CE2E819AFAD4C001D3C46 /* AVFoundation.framework */; };
 		218CE2EB19AFAD6E001D3C46 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218CE2EA19AFAD6E001D3C46 /* MediaPlayer.framework */; };
 		21B8412D19AFCDB2006113DF /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8412C19AFCDB2006113DF /* Model.m */; };
@@ -40,13 +39,11 @@
 
 /* Begin PBXFileReference section */
 		218CE2D619AF9461001D3C46 /* Coalition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coalition-Bridging-Header.h"; sourceTree = "<group>"; };
-		218CE2D719AF9462001D3C46 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
-		218CE2D819AF9462001D3C46 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
-		218CE2E019AFA7FC001D3C46 /* ChallengesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengesViewController.h; sourceTree = "<group>"; };
-		218CE2E119AFA7FC001D3C46 /* ChallengesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengesViewController.m; sourceTree = "<group>"; };
-		218CE2E219AFA7FC001D3C46 /* ChallengesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengesViewController.xib; sourceTree = "<group>"; };
-		218CE2E519AFA885001D3C46 /* ChallengesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengesView.h; sourceTree = "<group>"; };
-		218CE2E619AFA885001D3C46 /* ChallengesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengesView.m; sourceTree = "<group>"; };
+		218CE2E019AFA7FC001D3C46 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		218CE2E119AFA7FC001D3C46 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		218CE2E219AFA7FC001D3C46 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		218CE2E519AFA885001D3C46 /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
+		218CE2E619AFA885001D3C46 /* VideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoView.m; sourceTree = "<group>"; };
 		218CE2E819AFAD4C001D3C46 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		218CE2EA19AFAD6E001D3C46 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		21B8412B19AFCDB2006113DF /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
@@ -122,11 +119,11 @@
 		218CE2DD19AF9B61001D3C46 /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
-				218CE2E019AFA7FC001D3C46 /* ChallengesViewController.h */,
-				218CE2E119AFA7FC001D3C46 /* ChallengesViewController.m */,
-				218CE2E219AFA7FC001D3C46 /* ChallengesViewController.xib */,
-				218CE2E519AFA885001D3C46 /* ChallengesView.h */,
-				218CE2E619AFA885001D3C46 /* ChallengesView.m */,
+				218CE2E019AFA7FC001D3C46 /* VideoViewController.h */,
+				218CE2E119AFA7FC001D3C46 /* VideoViewController.m */,
+				218CE2E219AFA7FC001D3C46 /* VideoViewController.xib */,
+				218CE2E519AFA885001D3C46 /* VideoView.h */,
+				218CE2E619AFA885001D3C46 /* VideoView.m */,
 			);
 			name = Challenges;
 			sourceTree = "<group>";
@@ -161,9 +158,7 @@
 				BE6FF15F19AF8E9000831ACC /* ViewController.swift */,
 				BE6FF16419AF8E9000831ACC /* Images.xcassets */,
 				BE6FF15B19AF8E9000831ACC /* Supporting Files */,
-				218CE2D719AF9462001D3C46 /* VideoViewController.h */,
 				BE80EE5019AFBC9500B8639E /* coursera_videos */,
-				218CE2D819AF9462001D3C46 /* VideoViewController.m */,
 			);
 			path = Coalition;
 			sourceTree = "<group>";
@@ -294,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE80EE5119AFBC9500B8639E /* coursera_videos in Resources */,
-				218CE2E419AFA7FC001D3C46 /* ChallengesViewController.xib in Resources */,
+				218CE2E419AFA7FC001D3C46 /* VideoViewController.xib in Resources */,
 				BE6FF16519AF8E9000831ACC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,15 +310,14 @@
 			files = (
 				BE6FF16019AF8E9000831ACC /* ViewController.swift in Sources */,
 				BE6FF15E19AF8E9000831ACC /* AppDelegate.swift in Sources */,
-				218CE2E319AFA7FC001D3C46 /* ChallengesViewController.m in Sources */,
+				218CE2E319AFA7FC001D3C46 /* VideoViewController.m in Sources */,
 				21B8412D19AFCDB2006113DF /* Model.m in Sources */,
 				21B8413019AFCE15006113DF /* Course.m in Sources */,
-				218CE2E719AFA885001D3C46 /* ChallengesView.m in Sources */,
+				218CE2E719AFA885001D3C46 /* VideoView.m in Sources */,
 				BE80EE4A19AFB31A00B8639E /* Courses.swift in Sources */,
 				21B8413619AFCE32006113DF /* Content.m in Sources */,
 				21B8413919AFCE3F006113DF /* Challenge.m in Sources */,
 				21B8413319AFCE26006113DF /* Chapter.m in Sources */,
-				218CE2D919AF9462001D3C46 /* VideoViewController.m in Sources */,
 				BE80EE4519AFA69000B8639E /* CoursesCVC.swift in Sources */,
 				BE80EE4719AFA71800B8639E /* CoursesCVCell.swift in Sources */,
 			);

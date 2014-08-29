@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChallengesView : UIView
+@interface VideoView : UIView
 
 @end
