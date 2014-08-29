@@ -8,6 +8,7 @@
 
 #import "VideoViewController.h"
 #import "SAVideoRangeSlider.h"
+#import <UIKit/UIKit.h>
 
 @interface VideoViewController ()
 
@@ -27,7 +28,7 @@
     self.playingArea.translatesAutoresizingMaskIntoConstraints = NO;
     //build UI
     [self prepareVideoPlayerAt:self.videoURL];
-    
+    [self buildQuestionAskingUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,6 +113,46 @@
 -(void)startPlayingVideo
 {
     [self.moviePlayer play];
+}
+
+-(void)videoRange:(SAVideoRangeSlider *)videoRange didChangeLeftPosition:(CGFloat)leftPosition rightPosition:(CGFloat)rightPosition
+{
+    
+}
+
+-(void)buildQuestionAskingUI
+{
+    //create the question label
+    UIButton *questionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, ([UIScreen mainScreen].bounds.size.height * 0.4) + 65 + 70, [UIScreen mainScreen].bounds.size.width, 50)];
+    questionButton.tintColor = [UIColor blueColor];
+    [questionButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:200 alpha:0.7] forState:UIControlStateNormal];
+    [questionButton setTitleColor:[UIColor colorWithRed:10 green:0 blue:0 alpha:0.4] forState:UIControlStateHighlighted];
+    [questionButton setTitle:@"Choose Question Type" forState:UIControlStateNormal];
+    [questionButton setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.09]];
+    [questionButton addTarget:self action:@selector(performAddWithAlertView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:questionButton];
+    
+}
+
+-(void)performAddWithAlertView:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question Types" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Question and Answer",@"Multiple Choice", nil];
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    if( [buttonTitle isEqualToString:@"Question and Answer"] ){
+        //do some shit
+    }else if( [buttonTitle isEqualToString:@"Multiple Choice"] ){
+        //do some other shit
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self stopPlayingVideo];
 }
 
 /*

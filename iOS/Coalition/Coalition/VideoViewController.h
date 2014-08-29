@@ -14,7 +14,7 @@
 #import "Content.h"
 #import "SAVideoRangeSlider.h"
 
-@interface VideoViewController : UIViewController <SAVideoRangeSliderDelegate>
+@interface VideoViewController : UIViewController <SAVideoRangeSliderDelegate, UIAlertViewDelegate>
 
 @property(nonatomic, strong) Content *content;
 
