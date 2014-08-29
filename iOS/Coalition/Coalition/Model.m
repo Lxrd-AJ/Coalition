@@ -74,7 +74,7 @@
     
     //  Get thumbnail at the very start of the video
     CMTime thumbnailTime = [asset duration];
-    thumbnailTime.value = 1;
+    thumbnailTime.value = 1000;
     
     //  Get image from the video at the given time
     AVAssetImageGenerator *imageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
