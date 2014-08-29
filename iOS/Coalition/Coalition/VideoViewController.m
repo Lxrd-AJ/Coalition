@@ -12,6 +12,8 @@
 
 @property(nonatomic,strong) MPMoviePlayerController *moviePlayer;
 @property(nonatomic,strong) UIView *playingArea;
+@property (weak, nonatomic) IBOutlet UIView *playingAreaNib;
+@property(nonatomic,strong) NSURL *videoURL;
 
 @end
 
@@ -20,9 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.playingArea = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50.0f )];
+    
+    self.playingArea = self.playingAreaNib;
+    self.videoURL = self.content.url;
     self.playingArea.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:self.playingArea];
+        
+    //build Ui
+    [self prepareVideoPlayerAt:self.videoURL];
     
 }
 
@@ -41,6 +47,7 @@
     if (self.moviePlayer != nil) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoHasFinishedPlaying:) name:MPMoviePlayerPlaybackDidFinishNotification object:self.moviePlayer];
         self.moviePlayer.scalingMode = MPMovieScalingModeAspectFit;
+        [self.moviePlayer setFullscreen:YES animated:YES];
         [self.playingArea addSubview:self.moviePlayer.view];
         
         //create thumbnails

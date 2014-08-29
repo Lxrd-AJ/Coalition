@@ -15,8 +15,6 @@
 
 @interface VideoViewController : UIViewController
 
-@property(nonatomic,strong) NSURL *videoURL;
 @property(nonatomic, strong) Content *content;
-
 
 @end

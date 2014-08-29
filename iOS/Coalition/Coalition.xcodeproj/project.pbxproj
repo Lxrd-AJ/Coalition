@@ -107,12 +107,14 @@
 		218CE2DB19AF99E6001D3C46 /* Course Detail */ = {
 			isa = PBXGroup;
 			children = (
-				218CE2DD19AF9B61001D3C46 /* Video  */,
+				BE80EE5219AFFAFF00B8639E /* CourseDetailCVC.swift */,
+				BE80EE5419AFFB2900B8639E /* CourseDetailCVCell.swift */,
+				218CE2DD19AF9B61001D3C46 /* Video */,
 			);
 			name = "Course Detail";
 			sourceTree = "<group>";
 		};
-		218CE2DD19AF9B61001D3C46 /* Video  */ = {
+		218CE2DD19AF9B61001D3C46 /* Video */ = {
 			isa = PBXGroup;
 			children = (
 				218CE2E019AFA7FC001D3C46 /* VideoViewController.h */,
@@ -121,7 +123,7 @@
 				218CE2E519AFA885001D3C46 /* VideoView.h */,
 				218CE2E619AFA885001D3C46 /* VideoView.m */,
 			);
-			name = "Video ";
+			name = Video;
 			sourceTree = "<group>";
 		};
 		BE6FF14F19AF8E8F00831ACC = {
